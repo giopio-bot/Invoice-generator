@@ -66,7 +66,7 @@ export default function InvoiceTemplate({ invoiceData }) {
             </div>
             <div className="company-info">
               <p className="company-name">AR Happy House</p>
-              <p>Jan E. Shaba Housing,</p>
+              <p>Jan E Shaba Housing,</p>
               <p>Jamil Nagar, Bogura</p>
               <p>Phone: +88 01728 247398</p>
             </div>
