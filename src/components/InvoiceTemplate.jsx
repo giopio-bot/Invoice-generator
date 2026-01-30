@@ -44,6 +44,15 @@ export default function InvoiceTemplate({ invoiceData }) {
     return `${currency} ${formatted}`;
   };
 
+  const formatDate = (dateString) => {
+    if (!dateString) return '-';
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+
   return (
     <div className="invoice-template-wrapper">
       <div className="invoice">
@@ -76,7 +85,7 @@ export default function InvoiceTemplate({ invoiceData }) {
           <div className="invoice-title-section">
             <h1 className="invoice-title">Invoice</h1>
             <h2 className="payment-date">
-              Payment Date: <span>{paymentDate}</span>
+              Payment Date: <span>{formatDate(paymentDate)}</span>
             </h2>
           </div>
 

@@ -4,10 +4,19 @@
  */
 
 import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import './NavBar.css';
 
 export default function NavBar() {
   const location = useLocation();
+  const { logout } = useAuth();
+
+  const handleExit = () => {
+    if (confirm('Are you sure you want to exit? You will need to enter your password again to access the system.')) {
+      logout();
+      window.location.reload(); // Force reload to clear any cached state
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -39,6 +48,11 @@ export default function NavBar() {
             <Link to="/" className="navbar-create-btn">
               + Create New
             </Link>
+          </li>
+          <li className="navbar-item navbar-item-button">
+            <button className="navbar-exit-btn" onClick={handleExit}>
+              Exit
+            </button>
           </li>
         </ul>
       </div>

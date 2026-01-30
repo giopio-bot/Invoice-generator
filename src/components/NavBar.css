@@ -90,6 +90,27 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.navbar-exit-btn {
+  display: inline-block;
+  background: rgba(220, 38, 38, 0.8);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-exit-btn:hover {
+  background: rgba(220, 38, 38, 1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 768px) {
   .navbar-container {
     flex-direction: column;
@@ -115,6 +136,12 @@
   }
 
   .navbar-create-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-exit-btn {
     display: block;
     width: 100%;
     text-align: center;

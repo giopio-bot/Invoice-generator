@@ -64,6 +64,52 @@ const PreviewPanel = forwardRef(({ invoiceData, templateId, invoiceGenerated, on
     }
   };
 
+  const handleCopyToClipboard = async () => {
+    if (!invoiceData || isExporting) return;
+
+    setIsExporting(true);
+    try {
+      // Get the invoice element
+      const wrapper = document.querySelector('.invoice-preview-container .invoice-template-wrapper');
+      if (!wrapper) {
+        alert('Invoice element not found.');
+        return;
+      }
+
+      const invoiceElement = wrapper.querySelector('.invoice');
+      if (!invoiceElement) {
+        alert('Invoice element not found.');
+        return;
+      }
+
+      // Use html2canvas to convert to image
+      const html2canvas = (await import('html2canvas')).default;
+      const canvas = await html2canvas(invoiceElement, {
+        scale: 2,
+        useCORS: true,
+        logging: false
+      });
+
+      // Convert to blob and copy to clipboard
+      canvas.toBlob(async (blob) => {
+        try {
+          await navigator.clipboard.write([
+            new ClipboardItem({ 'image/png': blob })
+          ]);
+          alert('Invoice copied to clipboard as image!');
+        } catch (error) {
+          console.error('Failed to copy to clipboard:', error);
+          alert('Failed to copy to clipboard. Your browser may not support this feature.');
+        }
+      });
+    } catch (error) {
+      console.error('Copy failed:', error);
+      alert('Failed to copy invoice. Please try again.');
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   const handleShareOptionClick = (result) => {
     setIsExporting(false);
     setShowShareMenu(false);
@@ -92,6 +138,14 @@ const PreviewPanel = forwardRef(({ invoiceData, templateId, invoiceGenerated, on
               disabled={isExporting || !invoiceData}
             >
               {isExporting ? 'Exporting...' : 'Export PDF'}
+            </button>
+            <button
+              type="button"
+              className="btn btn-outline"
+              onClick={handleCopyToClipboard}
+              disabled={isExporting || !invoiceData}
+            >
+              {isExporting ? 'Copying...' : 'Copy PDF'}
             </button>
             <button
               type="button"
