@@ -145,7 +145,7 @@ const PreviewPanel = forwardRef(({ invoiceData, templateId, invoiceGenerated, on
               onClick={handleCopyToClipboard}
               disabled={isExporting || !invoiceData}
             >
-              {isExporting ? 'Copying...' : 'Copy PDF'}
+              {isExporting ? 'Copying...' : 'Copy'}
             </button>
             <button
               type="button"
