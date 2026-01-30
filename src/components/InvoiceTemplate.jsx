@@ -49,12 +49,12 @@ export default function InvoiceTemplate({ invoiceData }) {
       <div className="invoice">
         {/* Decorative top header */}
         <div className="top-header">
-          <img src="/src/assets/templates/images/top-header.svg" alt="header" />
+          <img src="/templates/images/top-header.svg" alt="header" />
         </div>
 
         {/* Decorative sidebar */}
         <div className="main-header">
-          <img src="/src/assets/templates/images/sidebar.svg" alt="sidebar" />
+          <img src="/templates/images/sidebar.svg" alt="sidebar" />
         </div>
 
         {/* Main Content */}
@@ -62,7 +62,7 @@ export default function InvoiceTemplate({ invoiceData }) {
           {/* Company Header */}
           <div className="company-header">
             <div className="logo-section">
-              <img src="/src/assets/templates/images/logo.svg" alt="Giopio Logo" className="company-logo" />
+              <img src="/templates/images/logo.svg" alt="Giopio Logo" className="company-logo" />
             </div>
             <div className="company-info">
               <p className="company-name">AR Happy House</p>
@@ -179,7 +179,7 @@ export default function InvoiceTemplate({ invoiceData }) {
           {/* Signature Section */}
           <div className="signature-section">
             <div className="signature-box">
-              <img src="/src/assets/templates/images/e-signature.svg" alt="Signature" className="signature-img" />
+              <img src="/templates/images/e-signature.svg" alt="Signature" className="signature-img" />
               <p className="signature-name">(Jakarea Parvez)</p>
               <p className="signature-title">CEO, Giopio</p>
             </div>

@@ -9,7 +9,7 @@ export default function TemplateModal({ isOpen, onClose, onSelectTemplate }) {
   if (!isOpen) return null;
 
   const templates = [
-    { id: 1, name: 'Template 1', description: 'Giopio Style', image: '/src/assets/templates/images/template-1-thumb.png' }
+    { id: 1, name: 'Template 1', description: 'Giopio Style', image: '/templates/images/template-1-thumb.png' }
   ];
 
   const handleSelect = (templateId) => {

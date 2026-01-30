@@ -11,7 +11,7 @@ export const templateLoader = {
   async loadTemplate(templateId = 1) {
     try {
       // Load HTML template
-      const htmlResponse = await fetch(`/src/assets/templates/template-${templateId}.html`);
+      const htmlResponse = await fetch(`/templates/template-${templateId}.html`);
 
       if (!htmlResponse.ok) {
         throw new Error(`Failed to load template: ${htmlResponse.status}`);
@@ -20,7 +20,7 @@ export const templateLoader = {
       const templateHtml = await htmlResponse.text();
 
       // Load CSS
-      const cssResponse = await fetch(`/src/assets/templates/template-${templateId}.css`);
+      const cssResponse = await fetch(`/templates/template-${templateId}.css`);
 
       if (!cssResponse.ok) {
         console.warn(`Failed to load CSS for template ${templateId}`);
@@ -56,7 +56,7 @@ export const templateLoader = {
       const src = img.getAttribute('src');
       if (src && src.startsWith('./images/')) {
         const imageName = src.replace('./images/', '');
-        img.src = `/src/assets/templates/images/${imageName}`;
+        img.src = `/templates/images/${imageName}`;
       }
     });
 
