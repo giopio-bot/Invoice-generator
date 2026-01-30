@@ -406,29 +406,97 @@ h6 {
 
 @media screen and (max-width: 600px) {
     .invoice-content {
-        padding: 50px 30px;
+        padding: 40px 24px;
     }
 
     .company-header {
         flex-direction: column;
-        gap: 20px;
+        gap: 16px;
     }
 
     .company-info {
         text-align: left;
     }
 
+    .invoice-title {
+        font-size: 32px;
+    }
+
+    .payment-date {
+        font-size: 13px;
+    }
+
     .invoice-details-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 16px;
     }
 
     .table-header .col-description,
     .table-header .col-price {
-        font-size: 13px;
+        font-size: 12px;
+    }
+
+    .col-description {
+        padding-right: 12px;
     }
 
     .col-price {
+        width: 100px;
+    }
+
+    .item-description,
+    .item-price {
+        font-size: 13px;
+    }
+
+    .summary-notes-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .payment-summary {
+        width: 100%;
+    }
+
+    .summary-label,
+    .summary-value {
+        font-size: 13px;
+    }
+
+    .total-row .summary-label,
+    .total-row .summary-value {
+        font-size: 16px;
+    }
+
+    .signature-img {
         width: 120px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .invoice-content {
+        padding: 32px 20px;
+    }
+
+    .invoice-title {
+        font-size: 28px;
+    }
+
+    .company-logo {
+        height: 40px;
+    }
+
+    .table-header .col-description,
+    .table-header .col-price {
+        font-size: 11px;
+    }
+
+    .col-price {
+        width: 90px;
+    }
+
+    .item-description,
+    .item-price {
+        font-size: 12px;
     }
 }

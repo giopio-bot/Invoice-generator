@@ -23,7 +23,7 @@ export default function NavBar() {
       <div className="navbar-container">
         <div className="navbar-brand">
           <Link to="/">
-            <h1>Giopio Invoice</h1>
+            <img src="/templates/images/logo.svg" alt="Giopio Invoice" className="navbar-logo" />
           </Link>
         </div>
 

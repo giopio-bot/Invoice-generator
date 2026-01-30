@@ -48,6 +48,12 @@ body {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .app-container {
+    min-height: calc(100vh - 140px); /* Account for taller navbar on mobile */
+  }
+}
+
 /* Scrollbar Styling */
 .form-panel::-webkit-scrollbar,
 .preview-panel::-webkit-scrollbar {
